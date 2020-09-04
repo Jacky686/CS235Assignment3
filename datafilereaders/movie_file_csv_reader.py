@@ -64,6 +64,26 @@ class MovieFileCSVReader:
 
                 movie.runtime_minutes = int(row["Runtime (Minutes)"])
 
+                try:
+                    movie.external_rating = float(row["Rating"])
+                except ValueError:
+                    pass
+
+                try:
+                    movie.rating_votes = int(row["Votes"])
+                except ValueError:
+                    pass
+
+                try:
+                    movie.revenue_in_millions = float(row["Revenue (Millions)"])
+                except ValueError:
+                    pass
+
+                try:
+                    movie.metascore = int(row["Metascore"])
+                except ValueError:
+                    pass
+
                 self.__dataset_of_movies.append(movie)
                 # title = row['Title']
                 # release_year = int(row['Year'])

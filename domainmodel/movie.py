@@ -21,10 +21,10 @@ class Movie:
         self.__genres: List[Genre] = list()
         self.__runtime_minutes: int = 0
 
-        # add external rating
-        # add rating votes
-        # add revenue
-        # add meta scores
+        self.__external_rating: float = None
+        self.__rating_votes: int = None
+        self.__revenue_in_millions: float = None
+        self.__metascore: int = None
 
     @property
     def title(self) -> str:
@@ -87,6 +87,42 @@ class Movie:
             self.__runtime_minutes = runtime_minutes
         else:
             raise ValueError
+
+    @property
+    def external_rating(self) -> float:
+        return self.__external_rating
+
+    @external_rating.setter
+    def external_rating(self, external_rating: float):
+        if isinstance(external_rating, float) and 0 <= external_rating <= 10:
+            self.__external_rating = external_rating
+
+    @property
+    def rating_votes(self):
+        return self.__rating_votes
+
+    @rating_votes.setter
+    def rating_votes(self, rating_votes):
+        if isinstance(rating_votes, int) and rating_votes >= 0:
+            self.__rating_votes = rating_votes
+
+    @property
+    def revenue_in_millions(self):
+        return self.__revenue_in_millions
+
+    @revenue_in_millions.setter
+    def revenue_in_millions(self, revenue_in_millions):
+        if isinstance(revenue_in_millions, float) and revenue_in_millions > 0:
+            self.__revenue_in_millions = revenue_in_millions
+
+    @property
+    def metascore(self):
+        return self.__metascore
+
+    @metascore.setter
+    def metascore(self, metascore):
+        if isinstance(metascore, int) and metascore > 0:
+            self.__metascore = metascore
 
     def add_actor(self, actor: "Actor"):
         if isinstance(actor, Actor):

@@ -18,7 +18,7 @@ def test_rating_votes():
     movie_file_reader.read_csv_file()
 
     assert len(movie_file_reader.dataset_of_movies) == 1000
-    assert movie_file_reader.dataset_of_movies[12].external_rating == 7.9
+    assert movie_file_reader.dataset_of_movies[12].rating_votes == 323118
 
 
 def test_revenue_in_millions():

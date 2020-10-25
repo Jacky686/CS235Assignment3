@@ -22,7 +22,8 @@ C:\COMPSCI-235> venv\Scripts\activate
 
 C:\COMPSCI-235> pip install -r requirements.txt
 ```
-Running the web application
+Running the web application\
+Head to http://localhost:5000/ after running to view web application
 ```
 C:\COMPSCI-235> flask run
 ```

@@ -1,0 +1,36 @@
+{% extends 'layout.html' %} {% block content %}
+<main id="browse movies">
+    <div class="container-fluid">
+        <h2>Browse Movies</h2>
+        <table class="table" id="myTable">
+            <thead class="thead-dark">
+            <tr>
+                <th>Title</th>
+                <th>Release Year</th>
+                <th>Genre</th>
+                <th>Description</th>
+                <th>Director</th>
+                <th>Actors</th>
+                <th>Runtime (minutes)</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in range(length) %}
+            <tr>
+                <th>{{ movies[i].title }}</th>
+                <th>{{ movies[i].release_year }}</th>
+                <th>{% for genre in movies[i].genres %} {{ genre.genre_name }} {%- if not loop.last -%} , {% endif %} {%
+                    endfor %}
+                </th>
+                <th>{{ movies[i].description }}</th>
+                <th>{{ movies[i].director.director_full_name }}</th>
+                <th>{% for actor in movies[i].actors %} {{ actor.actor_full_name }} {%- if not loop.last -%} , {% endif
+                    %} {% endfor %}
+                </th>
+                <th>{{ movies[i].runtime_minutes }}</th>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</main>
+{% endblock %}

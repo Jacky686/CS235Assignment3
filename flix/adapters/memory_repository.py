@@ -21,7 +21,6 @@ class MemoryRepository(AbstractRepository):
         self._genres = list()
 
     def add_user(self, user: User):
-        print(user)
         self._users.append(user)
 
     def get_user(self, username) -> User:

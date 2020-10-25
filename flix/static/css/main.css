@@ -4,8 +4,21 @@
     font-family: Helvetica, Arial, sans-serif;
 }
 
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}
+
 h1 {
-    padding: 50px;
+    padding: 35px;
     text-align: center;
 }
 

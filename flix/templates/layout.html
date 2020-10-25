@@ -27,11 +27,12 @@
     <title>FLIX</title>
 </head>
 
-<body>
-    <div id="body">
+<body class="d-flex flex-column">
+    <div id="page-content">
         {% include 'navigation.html' %}
         <h1>Welcome to Flix</h1>
         {% block content %} {% endblock %}
     </div>
+    {% include 'footer.html' %}
 </body>
 </html>

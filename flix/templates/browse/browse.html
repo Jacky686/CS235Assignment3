@@ -12,6 +12,7 @@
                 <th>Director</th>
                 <th>Actors</th>
                 <th>Runtime (minutes)</th>
+                <th>Rating</th>
             </tr>
             </thead>
             <tbody>
@@ -28,6 +29,7 @@
                     %} {% endfor %}
                 </th>
                 <th>{{ movies[i].runtime_minutes }}</th>
+                <th>{{ movies[i].external_rating }}</th>
             </tr>
             {% endfor %}
         </table>

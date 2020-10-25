@@ -1,6 +1,6 @@
 # CS235 Flix Assignement
 jche686
-##A1
+## A1
 Create domain model and unit tests from CS235FlixSkeleton
 https://github.com/martinurschler/CS235FlixSkeleton
 

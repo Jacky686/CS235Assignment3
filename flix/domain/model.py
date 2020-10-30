@@ -127,7 +127,7 @@ class Movie:
             self.__release_year = None
 
         self.__description: str = ""
-        self.__director: Director = None
+        self.__director: List[Director] = list()
         self.__actors: List[Actor] = list()
         self.__genres: List[Genre] = list()
         self.__runtime_minutes: int = 0
@@ -164,13 +164,17 @@ class Movie:
             self.__description = description.strip()
 
     @property
-    def director(self) -> Director:
+    def director(self) -> List[Director]:
         return self.__director
 
     @director.setter
-    def director(self, director: Director):
-        if isinstance(director, Director) and self.__director is None:
+    def director(self, director: List):
+        if not any(not isinstance(director, Director) for d in director):
             self.__director = director
+
+    def add_director(self, director: "Director"):
+        if isinstance(director, Director):
+            self.__director.append(director)
 
     @property
     def actors(self) -> Iterable["Actor"]:

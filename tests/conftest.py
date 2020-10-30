@@ -6,7 +6,7 @@ from flix.adapters import memory_repository
 from flix.adapters.memory_repository import MemoryRepository
 
 
-TEST_DATA_PATH = os.path.join('C:', os.sep, 'Users', 'Jacky', 'Documents', 'COMPSCI235-GitHub', 'CS235Assignment2',
+TEST_DATA_PATH = os.path.join('C:', os.sep, 'Users', 'Jacky', 'Documents', 'COMPSCI235-GitHub', 'CS235Assignment3',
                               'tests', 'data')
 
 

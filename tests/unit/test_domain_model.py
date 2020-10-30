@@ -96,7 +96,7 @@ def test_movie_construction(movie, movie2):
     assert movie.title == "Ice Age"
     assert movie.release_year == 2002
     assert movie.description == ""
-    assert movie.director is None
+    assert movie.director == []
 
     for actor in movie.actors:
         assert False

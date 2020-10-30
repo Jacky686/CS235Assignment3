@@ -103,7 +103,7 @@ class MovieFileCSVReader:
                 movie.description = row["Description"]
 
                 director = row["Director"]
-                movie.director = Director(director)
+                movie.add_director(Director(director))
                 if Director(director) not in self.__dataset_of_directors:
                     self.__dataset_of_directors.append(Director(director))
 

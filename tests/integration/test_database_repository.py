@@ -1,25 +1,34 @@
-from datetime import date, datetime
-from typing import List
-
 import pytest
 
+from flix.adapters.database_repository import SqlAlchemyRepository
 from flix.domain.model import Director, Genre, Actor, Movie, User, Review, WatchList
 from flix.adapters.repository import RepositoryException
 
 
-def test_repository_can_add_and_get_a_user(in_memory_repo):
+def test_repository_can_add_a_user(session_factory):
+    repo = SqlAlchemyRepository(session_factory)
+
     user = User('Dave', '123456789')
-    in_memory_repo.add_user(user)
+    repo.add_user(user)
 
-    assert in_memory_repo.get_user('Dave') is user
+    repo.add_user(User('Martin', '123456789'))
 
-    user = in_memory_repo.get_user('fmercury')
+    user2 = repo.get_user('dave')
+
+    assert user2 == user and user2 is user
+
+
+def test_repository_can_retrieve_a_user(session_factory):
+    repo = SqlAlchemyRepository(session_factory)
+
+    user = repo.get_user('fmercury')
     assert user == User('fmercury', '8734gfe2058v')
 
 
-def test_repository_does_not_get_a_non_existent_user(in_memory_repo):
-    user = in_memory_repo.get_user('prince')
+def test_repository_does_not_retrieve_a_non_existent_user(session_factory):
+    repo = SqlAlchemyRepository(session_factory)
 
+    user = repo.get_user('prince')
     assert user is None
 
 

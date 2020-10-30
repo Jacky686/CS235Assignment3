@@ -13,6 +13,9 @@ Web pages include:
 - Browse movies page
 - Login page
 
+## A3
+Added database connection
+
 ### Building, Running and Testing
 Choose directory of your choice and store the web application inside it, we will use C:\COMPSCI-235 in this example
 ```
